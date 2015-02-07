@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Url Shortner</title>
+	</head>
+	<body>
+		<center>
+		<table>
+			<tr>
+			<td><img src="/static/url_short.png" width="250px"></td>
+			<td><h1><b><i>Url Shortner</i></b></h1></td>
+			</tr>
+			<!-- tr>
+			<td><h3>Give a Url : </h3></td>
+			<td><form action="/url" method="post">
+				<input name="url">
+			<input type="submit"></td>
+			</tr-->
+		</table>
+		<p></p>		
+		<form action="/url" method="post"><h3>Give a Url : </h3>
+			<input name="url" size='35'>
+			<input type="submit" value="Shorten Url"></form>
+		<p></p>
+
+		{% if orig %}
+		<div style="background-color: #99D6FF; border: 25px; padding: 25px; margin: 100px">
+		<h3>Given Url : <i>{{ orig[0] }}</i></h3>	
+		{% endif %}
+		
+		{% if shorten %}
+			<h3>Shortened Url : <i>{{ shorten[0] }}</i></h3>
+		{% endif %}
+		</div>
+
+		</center>
+	</body>
+</html>
